@@ -3,7 +3,7 @@
 body{
     margin:0;
     background: #eee;
-    font-family: Besley, serif;
+    font-family: Besley, 'Courier New', Courier, monospace,serif;
 }
 
 .header{
@@ -45,4 +45,41 @@ ul{
     display: flex;
     align-items: center;
     gap: 16px;
+}
+/* images slide section */
+.containt{
+    text-align: center;
+
+}
+img{
+    width: 150px;
+    height: 110px;
+}
+.title-two{
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 32px;
+}
+.course-slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 52px;
+}
+.info{
+    max-width: 200px;
+}
+
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #070000;
+    color: white;
 }
