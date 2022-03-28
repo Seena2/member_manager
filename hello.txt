@@ -1,1 +1,0 @@
-this text contain few hints and documentation of the code
