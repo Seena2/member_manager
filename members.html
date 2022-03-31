@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,13 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js"></script>
 </head>
+
 <body>
-    
+
     <div class="header">
         <div class="left">
             <div class="logo">LOGO</div>
-            <ul>  
+            <ul>
                 <li><a href="#">Register</a></li>
                 <li><a href="#">Membership Fee</a></li>
                 <li><a href="#">Benefits</a></li>
@@ -26,20 +28,150 @@
             </button>
             <div class="profile-image"></div>
         </div>
-        
+
     </div>
     <div class="content">
         <h1>New Members Registration Form</h1>
         <form action="" method="post">
+            <h3>Profile</h3>
+            <label for="title">Title: </label>
+            <select name="title" id="title">
+                <option value="dr">Dr.</option>
+                <option value="prof">Prof</option>
+                <option value="mr">Mr.</option>
+                <option value="mrs">Mrs.</option>
+                <option value="mis">Mis.</option>
+            </select><br>
+
             <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" placeholder="your Given Name">
+            <input type="text" id="firstName" name="firstName" placeholder="your Given Name"><br>
             <label for="middleName">Middle Name:</label>
-            <input type="text" id="middleName" placeholder="Father Name">
+            <input type="text" id="middleName" name="middleName" placeholder="Father Name"><br>
             <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" placeholder="Grandfather Name">
+            <input type="text" id="lastName" name="lastName" placeholder="Grandfather Name"><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob"><br>
+            <h6>Gender:</h6>
+            <div>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+            </div>
+            <div>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+
+            <div>
+                <label for="nationality">Nationality:</label>
+                <input type="text" id="nationality" name="nationality" placeholder="citizinship">
+            </div>
+            <div>
+                <h6>Marital Status:</h6>
+                <div>
+                    <input type="radio" id="married" name="maritalStatus" value="married">
+                    <label for="married">Married</label>
+                </div>
+                <div>
+                    <input type="radio" id="single" name="maritalStatus" value="single">
+                    <label for="single">Single</label>
+                </div>
+            </div>
+            <!--we can group options of select element as follow-->
+            <label for="title">Profession: </label>
+            <select name="profession" id="profession">
+                <optgroup label="Research">
+                    <option value="animalHealth">Animal Health</option>
+                    <option value="animalproduction">Animal production</option>
+                    <option value="animalDisease">Animal Disease</option>
+                </optgroup>
+                <optgroup label="Education">
+                    <option value="Livestock">Livestock</option>
+                    <option value="horticulture">Horticulture</option>
+                    <option value="vet">Veterinary</option>
+                </optgroup>
+            </select><br>
+
+            <label for="numOfChildren">Number of Children:</label>
+            <input type="number" id="numOfChildren" name="numOfChildren"><br>
+           
+            <h3>Current Address</h3>
+            <h4>where do you live currently?</h4>
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city"><br>
+            <label for="primaryPhone">Primary Phone Number:</label>
+            <input type="text" id="primaryPhone" name="primaryPhone">
+            <label for="secondaryPhone">Secondary Phone Number(optional):</label>
+            <input type="text" id="secondaryPhone" name="secondaryPhone"><br>
+
+
+            <label for="primaryEmail">Email(Primary):</label>
+            <input type="email" id="primaryEmail" name="primaryEmail" placeholder="name@email.com">
+            <label for="secondaryEmail">Email(Secondary):</label>
+            <input type="email" id="secondaryEmail" name="secondaryEmail" placeholder="yourmail@example.com"><br>
+
+            <label for="pobox">P.O.Box(If any):</label>
+            <input type="text" id="pobox" name="pobox"><br>
+
+            <h3>Career Status and Experiences</h3>
+            <h4>Current employment status</h4>
+            <!--change to select obtion-->
+            <div>
+                <input type="checkbox" id="employed" name="empStatus" value="working">
+                <label for="employed">Currently working</label>
+            </div>
+            <div>
+                <input type="checkbox" id="unemployed" name="empStatus" value="unemployed">
+                <label for="unemployed">Unemploye, but looking for job</label>
+            </div>
+            <h4>If you are currently employed,Name of your Institute/Organization</h4>
+            <label for="organization">organization:</label>
+            <input type="text" id="organization" name="organization"><br>
+            <label for="typeOfOrganization">Type of Organization:</label>
+            <select name="typeOfOrganization" id="typeOfOrganization">
+                    <option value="governmental">Governmental</option>
+                    <optgroup label="Non-Governmental">
+                        <option value="internationalOrganization">International Organization</option>
+                        <option value="associations">Associations</option>
+                        <option value="otherNgoTypes">Other NGO types</option>
+                    </optgroup>
+                    <option value="private">Private</option>
+                    <option value="runOwnBusiness">Run my own business</option>
+                    <option value="other">Other</option>
+            </select><br>
+            <label for="role">Your role in your current organization:</label>
+            <input type="text" id="role" name="role"><br>
+
+            <h4>Place of work</h4>
+            <label for="workCountry">Country:</label>
+            <input type="text" id="workCountry" name="workCountry"><br>
+            <label for="workRegion">Region:</label>
+            <input type="text" id="workRegion" name="workRegion"><br>
+            <label for="workDistrict">District:</label>
+            <input type="text" id="workDistrict" name="workDistrict"><br>
+            <label for="workKebele">Kebele:</label>
+            <input type="text" id="workKebele" name="workKebele"><br>
+
+
+            <label for="orgHistory">List any other organization(s) you that you have worked for previosuly </label>
+            <textarea name="" id="orgHistory" cols="30" rows="5">your work place history</textarea><br>
+           
+            <label for="experince">Total years of experaince(In years):</label>
+            <input type="text" id="experince" name="experince"><br>
+
+            <label for="interest">What is your career interest?</label>
+           <select name="interest" id="interest">
+               <option value="acadamician">Acadamician</option>
+           </select>
+
+
+
         </form>
     </div>
     <div class="footer"></div>
-    
+
 </body>
+
 </html>
