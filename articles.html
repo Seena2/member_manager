@@ -11,8 +11,9 @@
 </head>
 
 <body>
-    <div class="content">
+    <div class="container">
         <div class="header">
+            <!--Menu start-->
             <div class="left">
                 <div class="logo">LOGO</div>
                 <ul>
@@ -30,6 +31,7 @@
             </div>
 
         </div>
+        <!--Menu end-->
         <h1>Manuscript Submission Form</h1>
         <p>Instructions</p>
         <p>
@@ -42,214 +44,181 @@
 
 
         <form action="" method="post">
-            <fieldset>
-                <legend>
-                    <h4> Manuscript </h4>
-                </legend>
-                
+            <section>
+                <fieldset>
+                    <legend>
+                        <h4> Manuscript Detail</h4>
+                    </legend>
+
                     <div>
                         <label for="manuscript_Title">Manuscript title *</label>
                         <textarea id="manuscript_Title" name="manuscript_Title"></textarea>
                     </div>
                     <div>
-                        <label for="abstract">Abstract *</label>
-                        <button type="button">Upload</button>
-                        <p>Please upload word documents</p>
+                        <label for="abstract"><span>Upload Abstract * :</span> </label>
+                        <input type="file" id="abstract" name="abstract" accept="file/*">
+                        <i>Please upload word documents</i>
                     </div>
-                    <ldiv>
-                        <label for="abstract">Body of Articles *</label> </label>
-                        <button type="button">Upload</button>
-                        <p>Please upload word documents</p>
+                    <div>
+                        <label for="body_of_article"><span>Body of Articles * :</span> </label>
+                        <input type="file" id="body_of_article" name="body_of_article" accept="file/*">
+                        <i>Please upload word documents</i>
                     </div>
-              
-            </fieldset>
-            <fieldset>
-                <legend>
-                    <h4> Name of Author(s) </h4>
-                </legend>
-                <ul>
-                    <li>Corresponding author</li>
-                </ul><br>
-                <ul>
-                    <li>
+                    <p> The above indicated manuscript is submitted to appear in:* </p>
+
+                    <div>
+                        <input type="radio" id="proceedings" name="manuscript_is_for" value="Proceedings">
+                        <label for="proceedings">Proceedings</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="journal" name="manuscript_is_for" value="journal">
+                        <label for="journal">Journal (Ethiop. Vet. J.)</label>
+                    </div>
+
+
+                    <p> If the manuscript is submitted to the Journal, the column proposed is:* </p>
+                    <div>
+                        <input type="radio" id="proceedings" name="manuscript_is_for" value="Proceedings">
+                        <label for="proceedings">Original Articles</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="journal" name="manuscript_is_for" value="journal">
+                        <label for="journal">Review and Feature Articles</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="journal" name="manuscript_is_for" value="journal">
+                        <label for="journal">Short Communications, Clinical/Case Reports</label>
+                    </div>
+                </fieldset>
+            </section>
+            <section>
+                <fieldset>
+                    <legend>
+                        <h4> Name of Author(s) </h4>
+                    </legend>
+
+                    <div>Corresponding author</div>
+                    <div>
                         <label for="first_name">First Name*</label>
                         <input type="text" id="first_name" name="first_name" placeholder="Your given name">
-                    </li>
-                    <li>
+                    </div>
+
+                    <div>
                         <label for="middle_name">Middle Name*</label>
                         <input type="text" id="middle_name" name="middle_name" placeholder="father name">
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <label for="last_name">Last Name*</label>
                         <input type="text" id="last_name" name="last_name" placeholder="grandfather name">
-                    </li>
-                </ul><br>
-                <ul>
-                    <li>
+                    </div>
+
+
+                    <div>
                         <label for="author_email">Email *</label>
                         <input type="email" id="author_email" name="author_email" placeholder="example@mail.com">
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <label for="p_o_box">P.o.box*</label>
                         <input type="text" id="p_o_box" name="p_o_box">
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <label for="telephone">Telephone*</label>
                         <input type="tel" id="telephone" name="telephone">
-                    </li>
-                </ul><br>
-                <ul>
-                    <li>
+                    </div>
+
+                    <div>
                         <label for="institution">Institution *</label>
                         <input type="text" id="institution" name="institution">
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <label for="corrspondig_author_city">City *</label>
                         <input type="text" id="corrspondig_author_city" name="corrspondig_author_city">
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <label for="corrspondig_author_country">Country *</label>
                         <input type="text" id="corrspondig_author_country" name="corrspondig_author_country">
-                    </li>
-                </ul>
-                <ul>
+                    </div>
 
-                    <li>
-                        <i> Are you member of EVA? </i>
-                        <div>
-                            <input type="radio" id="member" name="member_of_EVA" value="member">
-                            <label for="member">Yes</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="not_member" name="member_of_EVA" value="not_member">
-                            <label for="not_member">No</label>
-                        </div>
-                    </li>
-                </ul>
-                <ul>
-                    <li>Co-authors</li>
+                    <p> Are you member of EVA? </p>
+                    <div>
+                        <input type="radio" id="member" name="member_of_EVA" value="member">
+                        <label for="member">Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="not_member" name="member_of_EVA" value="not_member">
+                        <label for="not_member">No</label>
+                    </div>
+                    <p>Co-authors</p>
                     <button type="button">Add Co-author(s)</button>
-                </ul>
-                <p>when this button clicked the page dynamically load the following field controls authomatically</p>
+                    <p>when this button clicked the page dynamically load the following field controls authomatically
+                    </p>
 
-                <ul>
-                    <li>
+                    <div>
                         <label for="first_name">First Name*</label>
                         <input type="text" id="first_name" name="first_name" placeholder="Your given name">
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <label for="middle_name">Middle Name*</label>
                         <input type="text" id="middle_name" name="middle_name" placeholder="father name">
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <label for="last_name">Last Name*</label>
                         <input type="text" id="last_name" name="last_name" placeholder="grandfather name">
-                    </li>
-                </ul><br>
-                <ul>
-                    <li>
+                    </div>
+                    <div>
                         <label for="author_email">Email *</label>
                         <input type="email" id="author_email" name="author_email" placeholder="example@mail.com">
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <label for="p_o_box">P.o.box*</label>
                         <input type="text" id="p_o_box" name="p_o_box">
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <label for="telephone">Telephone*</label>
                         <input type="tel" id="telephone" name="telephone">
-                    </li>
-                </ul><br>
-                <ul>
-                    <li>
+                    </div>
+                    <div>
                         <label for="institution">Institution *</label>
                         <input type="text" id="institution" name="institution">
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <label for="corrspondig_author_city">City *</label>
                         <input type="text" id="corrspondig_author_city" name="corrspondig_author_city">
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <label for="corrspondig_author_country">Country *</label>
                         <input type="text" id="corrspondig_author_country" name="corrspondig_author_country">
-                    </li>
-                </ul>
-                <ul>
+                    </div>
 
-                    <li>
-                        <i> Are you member of EVA? </i>
-                        <div>
-                            <input type="radio" id="member" name="member_of_EVA" value="member">
-                            <label for="member">Yes</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="not_member" name="member_of_EVA" value="not_member">
-                            <label for="not_member">No</label>
-                        </div>
-                    </li>
-                </ul>
+                    <p> Are you member of EVA? </p>
+                    <div>
+                        <input type="radio" id="member" name="member_of_EVA" value="member">
+                        <label for="member">Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="not_member" name="member_of_EVA" value="not_member">
+                        <label for="not_member">No</label>
+                    </div>
+                </fieldset>
+            </section>
+            <section>
+                <fieldset>
+                    <legend>copyright transfer agreement*</legend>
+                    <p>please attach the signed copyright agreement here</p>
+                    <div>
+                        <input type="file" id="copy_of_agreement" name="copy_of_agreement" accept="image/*">
+                    </div>
+                    <div>
+                        <input type="checkbox" id="agreement" name="agreement" value="agree">
+                        <label for="agreement">I agree to the <a href=""> Copyright transfer terms.</a></label>
+                    </div>
+                    <button type="submit">Submit</button>
 
-            </fieldset>
-            <fieldset>
-                <legend> </legend>
-                <ul>
-                    <li>
-                        <i> The above indicated manuscript is submitted to appear in:* </i>
-                    </li>
-                    <li>
-                        <div>
-                            <input type="radio" id="proceedings" name="manuscript_is_for" value="Proceedings">
-                            <label for="proceedings">Proceedings</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="journal" name="manuscript_is_for" value="journal">
-                            <label for="journal">Journal (Ethiop. Vet. J.)</label>
-                        </div>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-
-                        <i> If the manuscript is submitted to the Journal, the column proposed is:* </i>
-
-                    </li>
-                    <li>
-                        <div>
-                            <input type="radio" id="proceedings" name="manuscript_is_for" value="Proceedings">
-                            <label for="proceedings">Original Articles</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="journal" name="manuscript_is_for" value="journal">
-                            <label for="journal">Review and Feature Articles</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="journal" name="manuscript_is_for" value="journal">
-                            <label for="journal">Short Communications, Clinical/Case Reports</label>
-                        </div>
-                    </li>
-                </ul>
-
-            </fieldset>
-            <fieldset>
-                <legend>copyright transfer agreement*</legend>
-                <ul>
-                    <li>
-                        <label for="">please attach the signed copyright agreement here</label>
-                    </li>
-                    <li><button type="button">Browse...</button></li>
-                </ul>
-                <div>
-                    <input type="checkbox" id="agreement" name="agreement" value="agree">
-                    <label for="agreement">I agree to the <a href=""> Copyright transfer terms.</a></label>
-                </div>
-                <p></p>
-            </fieldset>
-            <button type="submit">Submit</button>
-            <h3>end</h3>
-
-
+                </fieldset>
+            </section>
         </form>
     </div>
+    <h3>End</h3>
     <div class="footer">
         copyright
     </div>
