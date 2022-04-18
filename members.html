@@ -12,15 +12,16 @@
 
 <body>
     <div class="container">
-        <!--Menu-->
-        <div class="header">
-            <div class="left">
+        <!--Menu start-->
+        <nav class="menu">
+
+            <div id="left">
                 <div class="logo">LOGO</div>
-                <ul>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Membership Fee</a></li>
-                    <li><a href="#">Benefits</a></li>
-                    <li><a href="#">FAQ</a></li>
+                <ul id="navUl">
+                    <li class="navLi"><a href="#">Register</a></li>
+                    <li class="navLi"><a href="#">Membership Fee</a></li>
+                    <li class="navLi"><a href="#">Benefits</a></li>
+                    <li class="navLi"><a href="#">FAQ</a></li>
                 </ul>
             </div>
             <div class="right">
@@ -29,346 +30,340 @@
                 </button>
                 <div class="profile-image"></div>
             </div>
-        </div>
-        <!--Menu End-->
-        <!--title start-->
-        <h1>New Members Registration Form</h1>
-        <!--title end-->
-        <!--plain text of introduction-->
-        <div>
-            <section>
-                <p><strong>Membership Type</strong> </p>
+        </nav>
+        <!--Menu end-->
+        <!--Intro text-->
+        <section>
+            <header class="header-intro">
+                <h1>New Members Registration Form</h1>
+                <!--plain text of introduction-->
+                <h2>Membership Type</h2>
                 <p>According to Article 6 of EVA by-law, the association has the following types of membership</p>
                 <p><strong>1.Regular Members</strong> </p>
-                <div>
-                    <p>Including founding members and members admitted by the general assembly</p>
-                    <p>A locally registered veterinarian who has completed education</p>
-                    <p>Accepting the association's objectives and goals</p>
-                    <p>Aged above 20 years</p>
-                    <p>Complies with the article of association and general assembly decisions</p>
-                    <p>Able to pay contribution fees decided by the general assembly</p>
-                    <p>Not legally prohibited</ip>
-                    <p>Annual membership fee is 300ETB, members registering for first time will be required to pay
-                        350ETB
-                    </p>
-                </div>
+                <UL>
+                    <li>Including founding members and members admitted by the general assembly</li>
+                    <li>A locally registered veterinarian who has completed education</li>
+                    <li>Accepting the association's objectives and goals</li>
+                    <li>Aged above 20 years</li>
+                    <li>Complies with the article of association and general assembly decisions</li>
+                    <li>Able to pay contribution fees decided by the general assembly</li>
+                    <li>Not legally prohibited</li>
+                    <li>Annual membership fee is 300ETB, members registering for first time will be required to pay
+                        350ETB </li>
+                </ul>
                 <p><strong>2.Cooperative Member</strong> </p>
-                <div>
-                    <p>An apprentice and a veterinarian candidate</p>
-                    <p>Professionals who are operating the veterinary and related activities such activities approved by
-                        the management board to meet the objectivies of the association.</p>
-                    <p>Supporting organizations can be cooperative member</p>
-                    <p>Annual membership fee: 2000 Birr</p>
-                </div>
+                <ul>
+                    <li>An apprentice and a veterinarian candidate</li>
+                    <li>Professionals who are operating the veterinary and related activities such activities approved
+                        by the management board to meet the objectivies of the association.</li>
+                    <li>Supporting organizations can be cooperative member</li>
+                    <li>Annual membership fee: 2000 Birr</li>
+                </ul>
                 <p><strong>3.Life time Member</strong> </p>
-                <div>
-                    <p>Any regular member of the association can be a life time member by advance payment of twenty
-                        years
-                        membership contribution fees.</p>
-                    <p>A life time member is not expected to pay the annual contribution fees and can exercise in/her
-                        life
-                        time the entitlements of the membership.</p>
-                </div>
+                <ul>
+                    <li>Any regular member of the association can be a life time member by advance payment of twenty
+                        years membership contribution fees.</li>
+                    <li>A life time member is not expected to pay the annual contribution fees and can exercise in/her
+                        life time the entitlements of the membership.</li>
+                </ul>
                 <p><strong>4.Honorary Member</strong> </p>
-                <div>
-                    <p>Those who contributed to the success of the association without being member and those who are
+                <ul>
+                    <li>Those who contributed to the success of the association without being member and those who are
                         engaged with the association becoming role models in succeeding in good performances and become
-                        members in
-                        accordance with the decisions of the General Assembly.</p>
-                    <p>The honorary members have NO right to vote and to be contenders.</p>
-                    <p>Unless with self-motion, they are not obligated to pay for contribution and other fees.</p>
-                </div>
+                        members in accordance with the decisions of the General Assembly.</li>
+                    <li>The honorary members have NO right to vote and to be contenders.</li>
+                    <li>Unless with self-motion, they are not obligated to pay for contribution and other fees.</li>
+                </ul>
                 <p><a href="">Continue to the Registration</a> </p>
-        </div>
+            </header>
         </section>
         <!--Form start-->
-        <form action="" method="post">
-            <p>Required fields are followed by <strong> <abbr title="required">*</abbr></strong></p>
-            <section>
+        <section>
+            <form action="" method="post" class="form-member">
+                <p>Required fields are labelled with "required" <strong> <abbr title="required">(*)</abbr></strong></p>
                 <fieldset>
                     <legend>
                         <h4>Profile</h4>
                     </legend>
-                    <div>
+                    <div class="form-row">
                         <label for="membershipType">Type of Memebership:</label>
-                        <select name="membershipType" id="membershipType">
-                            <option value="regular">Regular</option>
-                            <option value="cooperative">Cooperative</option>
-                            <option value="lifeTime">Life Time</option>
-                            <option value="honorary">Honorary</option>
-                        </select>
+                        <div class="select-wrapper">
+                            <select id="membershipType" name="membershipType" required>
+                                <option value="regular">Regular</option>
+                                <option value="cooperative">Cooperative</option>
+                                <option value="lifeTime">Life Time</option>
+                                <option value="honorary">Honorary</option>
+                            </select>
+                        </div>
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="title"><span> Title: </span> </label>
-                        <select name="title" id="title">
-                            <option value="dr">Dr.</option>
-                            <option value="prof">Prof</option>
-                            <option value="mr">Mr.</option>
-                            <option value="mrs">Mrs.</option>
-                            <option value="mis">Mis.</option>
-                        </select>
+                        <div class="select-wrapper">
+                            <select name="title" id="title">
+                                <option value="dr">Dr.</option>
+                                <option value="prof">Prof</option>
+                                <option value="mr">Mr.</option>
+                                <option value="mrs">Mrs.</option>
+                                <option value="mis">Mis.</option>
+                            </select>
+                        </div>
                     </div>
-                    <div>
-                        <label for="firstName"> First Name : <abbr title="required"
-                                aria-label="required">*</abbr></label>
-                        <input type="text" id="firstName" name="firstName" placeholder="your Given Name">
+                    <div class="form-row">
+                        <label for="firstName"> First Name : </label>
+                        <input type="text" id="firstName" name="firstName" placeholder="your Given Name" required>
+                        <span></span>
                     </div>
-                    <div>
-                        <label for="middleName"><span> Middle Name:</span>
-                            <strong> <abbr title="required" aria-label="required">*</abbr></strong></label>
-                        <input type="text" id="middleName" name="middleName" placeholder="Father Name">
+                    <div class="form-row">
+                        <label for="middleName"> Middle Name: </label>
+                        <input type="text" id="middleName" name="middleName" placeholder="Father Name" required>
+                        <span></span>
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="lastName"><span>Last Name: </span> </label>
-                        <input type="text" id="lastName" name="lastName" placeholder="Grandfather Name">
+                        <input type="text" id="lastName" name="lastName" placeholder="Grandfather Name" required>
+                        <span></span>
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="dob">Date of Birth:</label>
-                        <input type="date" id="dob" name="dob">
+                        <input type="date" id="dob" name="dob" required>
+                        <span></span>
                     </div>
-                    <fieldset>
+                    <fieldset class="form-row-radio">
                         <legend>Gender</legend>
-                        <ul>
-                            <li>
-                                <input type="radio" id="male" name="gender" value="male">
-                                <label for="male">Male</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="female" name="gender" value="female">
-                                <label for="female">Female</label>
-                            </li>
-                        </ul>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male" class="radio-label"> Male</label>
+
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female" class="radio-label"> Female</label>
                     </fieldset>
-                    <div>
+                    <div class="form-row">
                         <label for="nationality">Nationality:</label>
                         <input type="text" id="nationality" name="nationality" placeholder="citizinship">
                     </div>
-                    <div>
-                        <fieldset>
-                            <legend>Marital Status:</legend>
-                            <ul>
-                                <li>
-                                    <input type="radio" id="married" name="maritalStatus" value="married">
-                                    <label for="married">Married</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="single" name="maritalStatus" value="single">
-                                    <label for="single">Single</label>
-                                </li>
-                            </ul>
-                        </fieldset>
 
-                    </div>
-                    <div>
+                    <fieldset class="form-row-radio">
+                        <legend>Marital Status:</legend>
+                        <input type="radio" id="married" name="maritalStatus" value="married">
+                        <label for="married" class="radio-label">Married</label>
+
+                        <input type="radio" id="single" name="maritalStatus" value="single">
+                        <label for="single" class="radio-label">Single</label>
+                    </fieldset>
+                    <div class="form-row">
                         <label for="numOfChildren">Number of Children:</label>
                         <input type="number" id="numOfChildren" name="numOfChildren">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="photo"><span> Add your Photo:</span></label>
                         <input type="file" id="photo" name="photo" accept="image/*">
                     </div>
                 </fieldset>
-            </section>
-            <section>
+                <!--Contact Address-->
                 <fieldset>
                     <legend>
                         <h4>Current Address</h4>
                     </legend>
                     <p>(Place you are living currently)</p>
-                    <div>
+                    <div class="form-row">
                         <label for="country">Country:</label>
                         <input type="text" id="country" name="country">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="city">City:</label>
                         <input type="text" id="city" name="city">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="primaryPhone">Primary Phone Number:</label>
                         <input type="tel" id="primaryPhone" name="primaryPhone">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="secondaryPhone">Secondary Phone Number(optional):</label>
                         <input type="tel" id="secondaryPhone" name="secondaryPhone">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="primaryEmail">Email(Primary):</label>
-                        <input type="email" id="primaryEmail" name="primaryEmail" placeholder="yourmail@example.com">
+                        <input type="email" id="primaryEmail" name="primaryEmail" placeholder="yourmail@example.com" required>
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="secondaryEmail">Email(Secondary):</label>
                         <input type="email" id="secondaryEmail" name="secondaryEmail"
                             placeholder="yourmail@example.com">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="pobox">P.o.Box(If any):</label>
                         <input type="text" id="pobox" name="pobox">
                     </div>
                 </fieldset>
-            </section>
-            <section>
-                <p>Career Status and Experiences</p>
                 <fieldset>
                     <legend>
-                        <h4>Employment History</h4>
+                        <h4>Career Status and Experiences</h4>
                     </legend>
-                    <div>
-                        <input type="radio" id="employed" name="empStatus" value="employed">
-                        <label for="employed">Currently working</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="unemployed" name="empStatus" value="unemployed">
-                        <label for="unemployed">Unemployed, but looking for job</label>
-                    </div>
+                    <fieldset class="form-row-radio">
+                        <legend>
+                            Employment History
+                        </legend>
+                        <fieldset class="form-row-radio">
+                            <input type="radio" id="employed" name="empStatus" value="employed">
+                            <label for="employed" class="radio-label">Currently working</label>
+
+                            <input type="radio" id="unemployed" name="empStatus" value="unemployed">
+                            <label for="unemployed" class="radio-label">Unemployed, but looking for job</label>
+                        </fieldset>
+                    </fieldset>
                     <p> If you are currently employed,</p>
-                    <div>
+                    <div class="form-row">
                         <label for="organization">Name of your Institute/Organization:</label>
                         <input type="text" id="organization" name="organization">
                     </div>
-                    <div>
-                        <!--we can group options of select element as follow-->
+
+                    <!--we can group options of select element as follow-->
+                    <div class="form-row">
                         <label for="typeOfOrganization">Type of Organization:</label>
-                        <select name="typeOfOrganization" id="typeOfOrganization">
-                            <option value="governmental">Governmental</option>
-                            <optgroup label="Non-Governmental">
-                                <option value="internationalOrganization">International Organization</option>
-                                <option value="associations">Associations</option>
-                                <option value="otherNgoTypes">Other NGO types</option>
-                            </optgroup>
-                            <option value="private">Private</option>
-                            <option value="runOwnBusiness">Run my own business</option>
-                            <option value="other">Other</option>
-                        </select>
+                        <div class="select-wrapper">
+                            <select name="typeOfOrganization" id="typeOfOrganization">
+                                <option value="governmental">Governmental</option>
+                                <optgroup label="Non-Governmental">
+                                    <option value="internationalOrganization">International Organization</option>
+                                    <option value="associations">Associations</option>
+                                    <option value="otherNgoTypes">Other NGO types</option>
+                                </optgroup>
+                                <option value="private">Private</option>
+                                <option value="runOwnBusiness">Run my own business</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
                     </div>
-                    <div>
+
+                    <div class="form-row">
                         <label for="role">Your role in your current organization:</label>
                         <input type="text" id="role" name="role">
                     </div>
                     <p>Current Place of work</p>
-                    <div>
+                    <div class="form-row">
                         <label for="workCountry">Country:</label>
                         <input type="text" id="workCountry" name="workCountry">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="workRegion">Region:</label>
                         <input type="text" id="workRegion" name="workRegion">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="workDistrict">District:</label>
                         <input type="text" id="workDistrict" name="workDistrict">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="workKebele">Kebele:</label>
                         <input type="text" id="workKebele" name="workKebele">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="orgHistory">List any other organization(s) you have worked for previosuly </label>
                         <textarea name="orgHistory" id="orgHistory" cols="30"
-                            rows="5">your work place history</textarea><br>
+                            rows="5">your work place history</textarea>
                     </div>
-                    <div><label for="experince">Total years of experaince(In years):</label>
-                        <input type="text" id="experince" name="experince"><br>
+                    <div class="form-row">
+                        <label for="experince">Total years of experaince(In years):</label>
+                        <input type="text" id="experince" name="experince">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="careerInterest">What is your career interest? </label>
-                        <select name="careerInterest" id="careerInterest">
-                            <option value="academician">Academician</option>
-                            <option value="researcher">Researcher</option>
-                            <option value="fieldPractitioner">Field Practitioner</option>
-                            <option value="privatePractitioner">Private Practitioner</option>
-                            <option value="developmentOrganization">To work for development organization</option>
-                            <option value="other">Other</option>
-                        </select><br>
+                        <div class="select-wrapper">
+                            <select name="careerInterest" id="careerInterest">
+                                <option value="academician">Academician</option>
+                                <option value="researcher">Researcher</option>
+                                <option value="fieldPractitioner">Field Practitioner</option>
+                                <option value="privatePractitioner">Private Practitioner</option>
+                                <option value="developmentOrganization">To work for development organization</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
                     </div>
                 </fieldset>
-            </section>
-            <section>
                 <fieldset>
                     <legend>
                         <h4>Education Background</h4>
                     </legend>
-                    <div>
+                    <div class="form-row">
                         <label for="eduQualification">Highest Level of Academic Qualification Achieved</label>
-                        <select name="eduQualification" id="eduQualification">
-                            <option value="dvm">DVM</option>
-                            <option value="msc_mvsc">MSc/MVSc</option>
-                            <option value="phd">PhD</option>
-                            <option value="other">Other</option>
-                        </select>
+                        <div class="select-wrapper">
+                            <select name="eduQualification" id="eduQualification">
+                                <option value="dvm">DVM</option>
+                                <option value="msc_mvsc">MSc/MVSc</option>
+                                <option value="phd">PhD</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="bachelorDegree">When have you completed your first degree?</label>
-                        <input type="date" id="bachelorDegree" name="bachelorDegree"><br>
+                        <input type="date" id="bachelorDegree" name="bachelorDegree">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="bachelorsSchool">From which institute have you acquired your first degree?</label>
-                        <input type="text" id="bachelorschool" name="bachelorschool"><br>
+                        <input type="text" id="bachelorschool" name="bachelorschool">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="mastersDegree">When have you completed your masters degree?</label>
-                        <input type="date" id="mastersDegree" name="mastersDegree"><br>
+                        <input type="date" id="mastersDegree" name="mastersDegree">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="mastersSchool">From which institute have you acquired your masters degree?(If
                             any)</label>
-                        <input type="text" id="mastersSchool" name="mastersSchool"><br>
+                        <input type="text" id="mastersSchool" name="mastersSchool">
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="phdDegree">When have you completed your PhD?</label>
-                        <input type="date" id="phdDegree" name="phdDegree"><br>
+                        <input type="date" id="phdDegree" name="phdDegree">
+                    </div>
+                    <div class="form-row">
                         <label for="phdSchool">From which institute have you acquired your PhD?(If any)</label>
                         <input type="text" id="phdSchool" name="phdSchool"><br>
                     </div>
-                    <div>
+                    <div class="form-row">
                         <label for="otherQualification">If you have any other qualification, please list :</label>
                         <textarea name="otherQualification" id="otherQualification" cols="30" rows="5"></textarea>
                     </div>
-                    <div>
+
+                    <div class="form-row">
                         <label for="tempo">Please upload scanned copy of your temporary degree </label>
                         <input type="file" id="tempo" name="tempo" accept="">
 
                     </div>
                 </fieldset>
-            </section>
-            <section>
                 <fieldset>
                     <legend>
                         <h4>For Corporate Members Only </h4>
                     </legend>
-                    <div>
+                    <div class="form-row">
                         <label for="organization">Name of your organization or institute</label>
                         <input type="text" id="organization" name="organization"><br>
                     </div>
-
-                   
                 </fieldset>
-            </section>
-            <section>
+
                 <fieldset>
                     <legend>
                         <h4>Membership Fee</h4>
                     </legend>
-                    <p>Dear applicant, the registration fee for regular members is 350 Ethiopian Birr. Kindly transfer
-                        the
-                        payment
-                        to the Ethiopian Veterinary Association bank account indicated below:</p>
-                    <p><strong>Bank Name</strong> : Commercial Bank of Ethiopia</p>
-                    <p><strong>Bank Branch Address</strong> : Addis Ababa, Cape Verde Streer</p>
-                    <p><strong>Swift Code</strong> :CBETATAA</p>
-                    <p><strong>Account Number</strong> :1000050555333</p>
-                    <p><strong>Account Holder's Name</strong> :Ethiopian Veterinary Association</p>
-                    <p>Once you have made the payment, Please send us the scanned copy of your bank reciept or
-                        screenshot of mobile banking payment transaction(if you have payed via mobile banking). </p>
-                    <p><strong>Please Note that, </strong>your registration will only be completed after reciept is
-                        recieved by the association.
-                    </p>
-                    <p><span>Upload your Reciept:</span>
+                    <div class="form-row">
+                        <p>Dear applicant, the registration fee for regular members is 350 Ethiopian Birr. Kindly
+                            transfer the payment to the Ethiopian Veterinary Association bank account indicated below:
+                        </p>
+                        <p><strong>Bank Name</strong> : Commercial Bank of Ethiopia</p>
+                        <p><strong>Bank Branch Address</strong> : Addis Ababa, Cape Verde Streer</p>
+                        <p><strong>Swift Code</strong> :CBETATAA</p>
+                        <p><strong>Account Number</strong> :1000050555333</p>
+                        <p><strong>Account Holder's Name</strong> :Ethiopian Veterinary Association</p>
+                        <p>Once you have made the payment, Please send us the scanned copy of your bank reciept or
+                            screenshot of mobile banking payment transaction(if you have payed via mobile banking). </p>
+                        <p><strong>Please Note that, </strong>your registration will only be completed after reciept is
+                            recieved by the association.
+                        </p>
+                    </div>
+                    <div class="form-row"><span>Upload your Reciept:</span>
                         <input type="file" id="reciept" name="reciept" accept="">
-                    </p>
-              </fieldset>
-            </section>
-            <section>
-                <fieldset>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-row-radio">
                     <legend>
                         <h4>Agreement</h4>
                     </legend>
@@ -377,41 +372,32 @@
                         regulations
                         of the Association. With this in mind, I apply:
                     </p>
-                    <div>
-                        <input type="radio" id="newMember" name="agreementToMembership" value="new member">
-                        <label for="newMember">to be registered as a new member</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="renewalOfMembership" name="agreementToMembership" value="renewal">
-                        <label for="renewalOfMembership">to renew my membership</label>
-                    </div>
+                    <input type="radio" id="newMember" name="agreementToMembership" value="new member">
+                    <label for="newMember" class="radio-label">to be registered as a new member</label>
 
+                    <input type="radio" id="renewalOfMembership" name="agreementToMembership" value="renewal">
+                    <label for="renewalOfMembership" class="radio-label">to renew my membership</label>
                 </fieldset>
-
-            </section>
-            <section>
-                <p>
-                    <button type="submit">Submit</button>
-                </p>
-            </section>
-        </form>
-
+                    <div class="form-row">
+                        <button id="submitbtn" type="submit">Submit</button>
+                    </div>
+            </form>
+        </section>
         <!--Form End -->
+        <!--will be displayed after the record is successfully stored on the DB-->
+        <p> Dear Sir/Madam, Thank you very much for choosing to be member of EVA. your application
+            has been recorded successfully and we will process it and send your ID Card and reciept in
+            a few days.</p>
+        <p>In case you have any enquiries, Kindly reach us through: <i><a
+                    href="http://">ethiopianveterinaryassociation@gmail.com</a> </i></p>
+
+        <h4>Thank you! Stay Safe!</h4>
 
     </div>
 
-    <!--will be displayed after the record is successfully stored on the DB-->
-    <p> Dear Sir/Madam, Thank you very much for choosing to be member of EVA. your application
-        has been recorded successfully and we will process it and send your ID Card and reciept in
-        a few days.</p>
-    <p>In case you have any enquiries, Kindly reach us through: <i><a
-                href="http://">ethiopianveterinaryassociation@gmail.com</a> </i></p>
-
-    <h4>Thank you! Stay Safe!</h4>
-
-    <h3>end</h3>
-    <div class="footer">copyright</div>
-
+    <section>
+        <div class="footer">copyright</div>
+    </section>
 </body>
 
 </html>

@@ -7,10 +7,11 @@ html,body{
 }
 body{
     font-family: Besley,Roboto, sans-serif 'Courier New', Courier, monospace,serif;
-    margin:0;
+    margin: 2px auto;
+    font: 1.3rem;
     background: #dedef7;
    }
-
+/* NAV */
 .header{
     background: #eeec74;
     border-bottom: 1px solid #ddd;
@@ -20,14 +21,6 @@ body{
     align-items: center;
     padding:8px;
 }
-.profile-image{
-    background: #4c89e6;
-    box-shadow: inset 2px 2px 4px rgba(0,0,0,.5);
-    border-radius: 50%;
-    width:48px;
-    height: 48px;
-
-}
 .logo{
     color:#2363d8d3;
     border-radius: 8px;
@@ -35,13 +28,21 @@ body{
     font-weight: 900;
     font-style: italic;
 }
+.profile-image{
+    background: #4c89e6;
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,.5);
+    border-radius: 50%;
+    width:48px;
+    height: 48px;
+}
 
 button{
     border:none;
     border-radius: 8px;
     background: #197fb9;
-    color: white;
+    color: #ffffff;
     padding: 8px 24px;
+    
 }
 
 a{
@@ -50,7 +51,7 @@ a{
     color: #197fb9;
 }
 
-ul{
+#navUl{
     list-style-type: none;
     display: flex;
     margin: 0;
@@ -67,18 +68,279 @@ h6{
         gap: 16px;
     }
 /*Form Styling*/
+/*Remove system-level styling inherited from OS w/c make controls difficult to style*/
+input{
+    -webkit-appearance:none;
+    appearance: none;
+}
+/* to inherit the font styling from parent, since forms don't inherit fonts by default*/
+button,input,textarea,select{
+    font-family: inherit;
+    font-size: 100%;
+}
 form{
+    position: relative;
     /*center the form on the page*/
     margin: 0 auto;
-    width: 700px;
+    width: 740px;
+    /*form outline*/
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    box-sizing: border-box;
+    /* Create grid 
+    display: grid;
+    grid-template-columns: (2,1fr);
+    grid-template-rows: 10em 1em 1em 1em;
+    */
+  
+}
+/*styling form controls
+input,textarea,select,button{
+    width: 300px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+ */
+ h1{
+     font-size: 2em;
+     align-self: end;
+ }
+ form>div{
+     margin-bottom: 20px;
+ }
+
+input,textarea{
+    /* To make sure that all text fields have the same font settings
+    By default, texareas have a monospace font */
+    font: 1.4em/1.5em cursive, sans-serif;
+    box-sizing: border-box;
+    /*Match form field borders */
+   /* border: none;*/
+    border: 1px solid #999;
+    padding: 0 10px;
+    margin: 0;
+    /*Uniform text field size */
+    /* width: 300px;*/
+    width: 80%;
     
 }
+input:focus,textarea:focus{
+    /* Additional highlight for focused elements */
+    border-color: #000;
+    /*background: rgba(f,f,f,0.1);*/
+    border-radius: 5px;
+}
+textarea{
+    /* align multiline fields with their labels*/
+    vertical-align: top;
+    /*provide space to type some text*/
+    height: 5em;
+    display: block;
+    padding: 10px;
+    margin: 10px 0 0 -10px;
+    width: 100%;
+    height: 90%;
+    border-right: 1px solid;
+    overflow: auto;
+}
+
+/*Styling difficult controls like search radio,checkbox ...*/
+input[type="search"],select{
+    -webkit-appearance: none;/*not supporte across all browsers */
+    appearance: none;
+}
+/*checkbox styling */
+input[type="checkbox"]{
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 1em;
+    height: 1em;
+    border: 1px solid gray;
+    /* adjusts the position of the checkboxes on the text baseline */
+    vertical-align: 20px;
+    /*override windows' high contast mode */
+    color: green;
+}
+/*custom tik sign */
+input[type="checkbox"]::before{
+    content: "✓";
+    position: absolute;
+    font-size: 1.2em;
+    right: -5px;
+    top: -8px;
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked::before{
+/* use 'visibility' instead of 'display' to avoid recalculating layout*/
+    visibility: visible;
+}
+ input[type="checkbox"]:disabled{
+     border-color: black;
+     background:#ddd;
+     color: gray;
+ }
+ 
+/*Styling radio */
+input[type="radio"]{
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 1.2em;
+    height: 1.2em;
+    border: 1px solid gray;
+    border-radius: 50%;
+    /* adjusts the position of the checkboxes on the text baseline */
+    vertical-align: -2px;
+    /*override windows' high contast mode */
+    color: black;
+}
+/*custom checked sign */
+input[type="radio"]::before{
+    display: block;
+    /*content: "🔘";*/
+    content: " ";
+    width: .6em;
+    height:.6em;
+    border-radius: 6px;
+    background-color: green;
+    font-size: 1.4em;
+    transform: translate(1px,1px)scale(0);
+    transform-origin:center;
+    transition: all 0.3s ease-in;
+    position: absolute;
+    right: 4px;
+    top: -1px;
+    
+}
+
+input[type="radio"]:checked::before{
+    transform: translate(3px,3px)scale(1);
+    transition: all 0.3s cubic-bezier(0.25,0.25,0.56,2);
+}
+ 
+
+/*styling dropdown*/
+.select-wrapper{
+    position: relative;
+}
+.select-wrapper::after{
+    content: "▼";
+    font-size: 1rem;
+    right: 10px;
+    top:6px;
+    position: absolute;
+}
+button,label,input,select,progress,meter{
+    display: block;
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    height: 30px;
+}
+input[type="text"],input[type="date"],input[type="color"],select{
+   /* box-shadow: inset 1px 1px 3px #333;*/
+    border-radius: 5px;
+}
 label{
-    font-size: 12px;
+    /* Uniform size and alignment */
+    font-size: 0.8em;
+    display: inline-block;
+    width: 80%;
+    margin-top: 5px;
+    /* text-align: right;*/
+}
+button{
+    /* this extra margin represent roughly the same space as the space
+    between the labels and the their text fields */
+    width: 60%;
+    margin: 0 auto;
+}
+#submitbtn{
+    padding: 5px;
+    font: bold .8em;
+    border: 2px solid #333;
+    border-radius: 5px;
+    cursor:pointer;
+    width: 100%;
+    margin: 0 auto;
+   /* transform: rotate(-1.5deg);*/
+}
+#submitbtn:after{
+    content: " >";
+}
+#submitbtn:hover,#submitbtn:focus{
+    outline: none;
+    background: #eeec74;
+    color:#000;
+}
+/* styling file input type- hide it and use its label instead*/
+/*
+input[type="file"]{
+    height: 0;
+    padding: 0;
+    opacity: 0;
+}
+label[for="file"]{
+    box-shadow: 1px 1px 3px #333;
+    background: linear-gradient(to bottom, #eee, #333);
+    border: 1px solid rgb(169,169,169);
+    text-align: center;
+    line-height: 1.5px;
+}
+*/
+/*validation styling */
+input:required{
+    border: 2px soldi black;
+}
+input:optional{
+    border:1px solid silver;
+}
+ /* make parent div flex container*/
+ fieldset>div{
+     margin-bottom: 2opx;
+     display: flex;
+     flex-flow: row wrap;
+ }
+ input+span{
+     position: relative;
+ }
+ input+span::before{    
+    position: absolute;
+    right:-20px;
+    top: 5px;
+}
+    /* required sign before the control*/
+    input:required+span::after{
+        font-size: 0.7rem;
+        position: absolute;
+        content: "required(*)";
+        color: red;
+        /*background-color: black;*/
+        padding: 5px 10px;
+        top: -20px;
+        left: -70px;
+    }
+input:invalid{
+    border: 2px solid red;
+}
+input:invalid+span::before{
+    content: "X";
+    color: red;
+}
+input:valid+span::before{
+    content: "✓";
+    color: green;
 }
 
 /* CPD style */
-
 
 /* images slide section */
 .content{

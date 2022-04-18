@@ -11,39 +11,49 @@
 </head>
 
 <body>
-
-    <div class="header">
-        <div class="left">
-            <div class="logo">LOGO</div>
-            <ul>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Membership Fee</a></li>
-                <li><a href="#">Benefits</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-        </div>
-
-    </div>
     <div class="container">
+        <!--Menu start-->
+        <nav class="menu">
+
+            <div id="left">
+                <div class="logo">LOGO</div>
+                <ul id="navUl">
+                    <li class="navLi"><a href="#">Register</a></li>
+                    <li class="navLi"><a href="#">Membership Fee</a></li>
+                    <li class="navLi"><a href="#">Benefits</a></li>
+                    <li class="navLi"><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <button type="button" class="register-btn">
+                    1 new notification
+                </button>
+                <div class="profile-image"></div>
+            </div>
+        </nav>
+        <!--Menu end-->
         <form action="" method="post">
             <fieldset>
                 <legend>Log In</legend>
-                <p>
+                <div class="form-row">
                     <label for="userName">User Name:</label>
-                    <input type="text" id="userName" name="userName">
-                </p>
-                <p>
+                    <input type="text" id="userName" name="userName" required>
+                </div>
+                <div class="form-row">
                     <label for="userEmail">Email:</label>
-                    <input type="email" id="userEmail" name="email" placeholder="yourmail@example.com">
+                    <input type="email" id="userEmail" name="email" required placeholder="yourmail@example.com">
 
-                </p>
-                <p>
-                    <label for="userPassword">Password:</label>
-                    <input type="password" id="userPassword" name="password">
-                </p>
-                <p>
-                    <button >Login</button>
-                </p>
+                </div>
+                <div class="form-row">
+                    <label for="userPassword">Password(required):</label>
+                    <input type="password" id="userPassword" name="userPassword" required minlength="8"
+                        aria-describedby="password-minlength">
+                    <div id="password-minlength">Enter at least eight characters</div>
+                </div>
+                <div class="form-row">
+                    <button>Login</button>
+                </div>
+                <p>You don't have account?  <a href="#">sign Up here</a></p>
             </fieldset>
 
 
