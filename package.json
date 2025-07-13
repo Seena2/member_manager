@@ -1,0 +1,31 @@
+{
+  "name": "membership",
+  "version": "1.0.0",
+  "description": "Mebership app registers and manages members",
+  "homepage": "https://github.com/Seena2/membership#readme",
+  "bugs": {
+    "url": "https://github.com/Seena2/membership/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seena2/membership.git"
+  },
+  "license": "ISC",
+  "author": "seena",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
