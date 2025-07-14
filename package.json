@@ -1,7 +1,7 @@
 {
   "name": "membership",
   "version": "1.0.0",
-  "description": "Mebership app registers and manages members",
+  "description": " Membership app: to register and manage members of an association",
   "homepage": "https://github.com/Seena2/membership#readme",
   "bugs": {
     "url": "https://github.com/Seena2/membership/issues"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Seena2/membership.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "seena",
   "type": "commonjs",
   "main": "server.js",
