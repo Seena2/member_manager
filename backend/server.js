@@ -1,8 +1,12 @@
 const express = require("express");
+const colors = require("colors"); //simply colors the code
 const dotenv = require("dotenv").config();
 const port = process.env.PORT || 3000;
 const memberRoutes = require("./routes/memberRoutes");
 const { errorHandler } = require("./middleware/errorMiddleware");
+const connectToDB = require("./config/db.js");
+
+connectToDB();
 
 //Init express app
 const app = express();
