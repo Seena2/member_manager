@@ -5,6 +5,7 @@ const port = process.env.PORT || 3000;
 const memberRoutes = require("./routes/memberRoutes");
 const { errorHandler } = require("./middleware/errorMiddleware");
 const connectToDB = require("./config/db.js");
+const userRoutes = require("./routes/userRoutes.js");
 
 connectToDB();
 
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //Routes
 app.use("/api/members", memberRoutes);
+app.use("/api/users", userRoutes);
 //Custom middleware
 //Note that custom middleware (including error-handling) must be placed after all other middleware and route handlers
 app.use(errorHandler);

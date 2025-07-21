@@ -6,6 +6,7 @@ const {
   updateMember,
   deleteMember,
 } = require("../controllers/memberController");
+const { protect } = require("../middleware/authMiddleware");
 
 //Create routes on router object
 /*
@@ -21,7 +22,7 @@ router.delete("/:id", deleteMember);
 //We can clean and refactor the code even more using 'route()' to group &chain similar routes together
 //Note we reduced the above 4 line of code to 2
 //GET & POST
-router.route("/").get(getMembers).post(setMember);
+router.route("/").get(protect, getMembers).post(protect, setMember);
 //PUT & DELETE
-router.route("/:id").put(updateMember).delete(deleteMember);
+router.route("/:id").put(protect, updateMember).delete(protect, deleteMember);
 module.exports = router;
