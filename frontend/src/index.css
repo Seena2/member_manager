@@ -145,6 +145,17 @@ p {
     transform: rotate(360deg);
   }
 }
+/*Fee */
+.justfyParagraphs {
+  text-align: justify;
+}
+/*Agreement */
+.radio {
+  display: grid;
+  grid-template-columns: 10px auto;
+  gap: 7px;
+  margin-top: 10px;
+}
 @media (max-width: 600px) {
   .form {
     width: 900%;

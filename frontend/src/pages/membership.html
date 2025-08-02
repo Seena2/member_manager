@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>EVA</h1>
+    </header>
+    <main>
+        <h2>Membership Registration</h2>
+        <form action="/url-where-you-want-to-submit-form-data">
+          <fieldset>
+            <legend>
+              Membership Option:
+            </legend>
+            <address>                 
+                <input type="radio" id="new-member" value="new-member" name="membership-option" placeholder="country " required>
+                <label for="new-member"> New membership: </label></br>                      
+                <input type="radio" id="new-member" value="new-member" name="membership-option" placeholder="country " required>
+                <label for="new-member"> Renewal of membership: </label></br>
+             </address>                      
+          </fieldset>
+          <!--personal inforamtion for member-->
+         <fieldset>
+              <legend>
+                Profile
+              </legend>
+              <label for="first-name"> First Name : </label><!--note the for attribute value is same to id of input element, this will associate the label with control item automatically-->
+                  <input type="text" id="first-name" name="first-name"placeholder="first name" required></br>
+               <!--Note that input elements are self-closing. and the required attribute will be used for validation of empty text-->
+               <label for="middle-name"> Middle Name : </label>
+                 <input type="text" id="middle-name" name="middle-name"placeholder="father name" required></br>
+               <label for="last-name"> Last Name : </label>
+                 <input type="text" id="last-name" name="last-name" placeholder="Grand father name" required></br>
+            </fieldset>
+            <!--Date of Birth-->
+            <fieldset>
+              <legend>
+                Date of Birth (European Calender)
+              </legend>
+              <label for="date-of-birth"> DoB: </label>
+                  <input type="datetime" id="date-of-birth" name="date-of-birth" placeholder="date of bith" required></br>
+                  <!--Radio Button and groups-->
+                    <fieldset>
+                      <legend>
+                        Gender 
+                      </legend>
+                    <input type="radio" id="male" value="male" name="gender">
+                    <label for="male"> Male</label>
+                    <input type="radio" id="female" value="female" name="gender">
+                    <label for="male"> Female</label>                              
+                    </fieldset>
+
+                <label for="maritial-status"> Maritial Status: </label>
+                   <input type="text" id="maritial-status" name="maritial-status" placeholder="select status" required></br>
+                <label for="number-of-childern"> Number of children: </label>
+                  <input type="text" id="number-of-childern" name="number-of-childern" placeholder="No. children" required></br>
+                <label for="profile-picture"> Profile picture: </label>
+                  <input type="text" id="profile-picture" name="profile-picture" placeholder="browse picture btn" required>
+                  <button>Browse</button>
+                  <!--Place of birth-->
+                  <fieldset>
+                    <legend>
+                      Place of Birth
+                    </legend>
+                    <address>
+                    <label for="country"> Country: </label>
+                        <input type="text" id="country" name="country" placeholder="country " required></br>
+                    <label for="region"> Region: </label>
+                        <input type="text" id="region" name="region" placeholder="Region" required></br>
+                    <label for="zone"> Zone: </label>
+                        <input type="text" id="zone" name="zone" placeholder="zone" required></br>
+                    <label for="woreda"> Woreda: </label>
+                        <input type="text" id="woreda" name="woreda" placeholder="woreda" required></br>
+                      </address>                      
+                  </fieldset>
+                  <!--Address-->
+                  <fieldset>
+                    <legend>
+                      Current Address
+                    </legend>
+                    <address>
+                    <label for="country"> Country: </label>
+                        <input type="text" id="country" name="country" placeholder="country " required></br>
+                    <label for="region"> Region: </label>
+                        <input type="text" id="region" name="region" placeholder="Region" required></br>
+                    <label for="zone"> Zone: </label>
+                        <input type="text" id="zone" name="zone" placeholder="zone" required></br>
+                    <label for="woreda"> Woreda: </label>
+                        <input type="text" id="woreda" name="woreda" placeholder="woreda" required></br>
+                     </address>                      
+                  </fieldset>
+                   <!--Contact Address-->
+                   <fieldset>
+                    <legend>
+                      Contact Address
+                    </legend>
+                    <address>
+                    <label for="mobile"> cell phone: </label>
+                        <input type="text" id="mobile" name="mobile" placeholder="mobile " required></br>
+                    <label for="telophone"> Tel.: </label>
+                        <input type="text" id="telophone" name="telophone" placeholder="telophone" required></br>
+                    <label for="post-code"> P.o.box : </label>
+                        <input type="text" id="post-code" name="post-code" placeholder="post-code" required></br>
+                    <label for="email"> email : </label>
+                        <input type="text" id="email" name="email" placeholder="email@email.com" required></br>
+                    <label for="skype"> Skype : </label>
+                        <input type="text" id="skype" name="skype" placeholder="skype" required></br>
+                    <label for="linkedin"> LindIn: </label>
+                        <input type="text" id="linkedin" name="linkedin" placeholder="linkedin" required></br>
+                    <label for="telegram"> Telegram : </label>
+                        <input type="text" id="telegram" name="telegram" placeholder="telegram" required></br>
+                    
+                      </address>                      
+                  </fieldset>
+            </fieldset>
+             <!-- Education-->
+             <fieldset>
+              <legend>
+                Education
+              </legend>            
+              <label for="mobile"> Education: </label>
+                  <input type="textarea" id="education" name="education" placeholder="education " required></br>
+              </fieldset>
+            <!--Work Experiance-->
+            <fieldset>
+              <legend>
+                Work experiance
+              </legend>            
+              <label for="mobile"> experiance: </label>
+                  <input type="textarea" id="experiance" name="experiance" placeholder="experiance " required></br>
+              </fieldset>
+               <!--Skill-->
+            <fieldset>
+              <legend>
+                Personal Skill and Competences
+              </legend>            
+              <label for="skill"> experiance: </label>
+                  <input type="textarea" id="skill" name="skill" placeholder="skill" required></br>
+              </fieldset>
+                <!--checkboxes-->
+                <!--checkboxes are usally used for questions that may have more than one answer.
+                wrapping an input element inside of a label element it will automatically associate the checkbox input with the label element surrounding it.
+                All related checkbox inputs should have the same name attribute. the same works for radio button
+                 -->
+                </br>
+              
+                <fieldset>
+                  <legend>
+                    Membership Type
+                  </legend>
+                <input type="checkbox" id="regular" value="regular" name="membership-type">
+                <label for="male"> Regular</label> </br>
+                <input type="checkbox" id="cooperative" value="cooperative" name="membership-type">
+                <label for="male"> Cooperative</label></br> 
+                <input type="checkbox" id="lifetime" value="lifetime" name="membership-type">
+                <label for="male"> Lifetime Membership</label> </br>
+                <input type="checkbox" id="honorary" value="honorary" name="membership-type">
+                <label for="male"> Honorary Membership</label></br>                                  
+                </fieldset>   
+                
+                <fieldset>
+                  <legend>
+                    Terms and Conditions
+                  </legend>
+                  <p>I have carefully read the Ethiopian Veterinary Association constituttion as amended 
+                    at the meeting held from 19-20 june 1992, in Addis Ababa and i fully agree to bound to the 
+                    rules and regulations of the Association.
+                  </p>
+                <input type="checkbox" id="agree" value="agree" name="agree">
+                <label for="male"> Agree</label> </br>
+                                           
+                </fieldset>                       
+         
+         <p>Captcha</p>
+             <input type="submit" name="submit" value="Register">
+        </form>
+        
+
+
+    </main>
+    <footer>
+
+    </footer>
+    
+</body>
+</html>

@@ -1,7 +1,8 @@
 const express = require("express");
 const colors = require("colors"); //simply colors the code
+const cors = require("cors");
 const dotenv = require("dotenv").config();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const memberRoutes = require("./routes/memberRoutes");
 const { errorHandler } = require("./middleware/errorMiddleware");
 const connectToDB = require("./config/db.js");
@@ -12,6 +13,7 @@ connectToDB();
 //Init express app
 const app = express();
 //Middlewares
+app.use(cors()); //allowing all origins.
 app.use(express.json()); //json body parser for raw json
 app.use(express.urlencoded({ extended: false }));
 

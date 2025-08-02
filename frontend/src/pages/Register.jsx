@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { FaUser } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { register, reset } from "../store/features/auth/authSlice";
+import Spiner from "../components/Spiner";
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -11,6 +15,25 @@ function Register() {
   });
   //destructure the form fields
   const { name, email, password, password2 } = formData;
+  //initialize hooks
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  //select what you want get from state
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+  //monitor for change in state values
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+    if (isSuccess || user) {
+      //redirect user
+      navigate("/");
+    }
+    //reset state data
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
 
   //generic onchange mehtod that can be use for each input, using the 'name' attiribute
   const onInputChange = (e) => {
@@ -21,7 +44,18 @@ function Register() {
   };
   const onSubmit = (e) => {
     e.preventDefault();
+    //check if the password matches
+    if (password !== password2) {
+      toast.error("Password do not match");
+    } else {
+      //register the user using 'register method(from the authSlice) via dispatcher
+      const userData = { name, email, password };
+      dispatch(register(userData));
+    }
   };
+  if (isLoading) {
+    <Spiner />;
+  }
   return (
     <>
       <section className="heading">
