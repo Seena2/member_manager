@@ -46,15 +46,15 @@ const updateMember = asyncHandler(async (req, res) => {
     throw new Error("Member not found");
   }
   //get the user
-  const user = await User.findById(req.user.id);
+  // const user = await User.findById(req.user.id);
   //check if user exists
-  if (!user) {
+  if (!req.user) {
     res.status(401);
     throw new Error("User not found");
   }
   //make sure one user doesn't modify the other users data
   //check if the logged in user matches the member user
-  if (member.user.toString() !== user.id) {
+  if (member.user.toString() !== req.user.id) {
     res.status(401);
     throw new Error("User not authorized, permission denied");
   }
@@ -81,15 +81,15 @@ const deleteMember = asyncHandler(async (req, res) => {
     throw new Error("Member not found");
   }
   //get the user
-  const user = await User.findById(req.user.id);
+  // const user = await User.findById(req.user.id);
   //check if user exists
-  if (!user) {
+  if (!req.user) {
     res.status(401);
     throw new Error("User not found");
   }
   //make sure one user doesn't modify the other users data
   //check if the logged in user matches the member user
-  if (member.user.toString() !== user.id) {
+  if (member.user.toString() !== req.user.id) {
     res.status(401);
     throw new Error("User not authorized, permission denied");
   }

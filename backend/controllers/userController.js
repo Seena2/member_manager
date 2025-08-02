@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
+
 //@desc     Register new user
 //@route    POST /api/users
 //@access   public
@@ -65,18 +66,12 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new Error("Invalid credentials");
   }
 });
+
 //@desc     Get user data
 //@route    GET /api/users/me
 //@access   private
 const getMe = asyncHandler(async (req, res) => {
-  //get user data by querying using id  we set on req.user obejct via authMiddleware
-  const { _id, name, email } = await User.findById(req.user.id);
-  // res.json({ message: "User data display" });
-  res.status(200).json({
-    id: _id,
-    name,
-    email,
-  });
+  res.status(200).json(req.user);
 });
 
 //Generate JWT token

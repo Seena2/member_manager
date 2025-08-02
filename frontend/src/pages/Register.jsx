@@ -18,7 +18,7 @@ function Register() {
   //initialize hooks
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  //select what you want get from state
+  //select what you want to get from state
   const { user, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.auth
   );
@@ -48,8 +48,9 @@ function Register() {
     if (password !== password2) {
       toast.error("Password do not match");
     } else {
-      //register the user using 'register method(from the authSlice) via dispatcher
+      //get the form data for registration
       const userData = { name, email, password };
+      //register the user using 'register method(from the authSlice) via dispatcher
       dispatch(register(userData));
     }
   };

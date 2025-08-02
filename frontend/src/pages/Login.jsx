@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { FaSignInAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { login, reset } from "../store/features/auth/authSlice";
+import { toast } from "react-toastify";
+import Spiner from "../components/Spiner";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -9,6 +13,28 @@ function Login() {
   });
   //destructure the form fields
   const { email, password } = formData;
+  //initialize hooks
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  //select what you want to get from state
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+  //monitor for change in state values
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+      navigate("/login");
+    }
+    if (isSuccess || user) {
+      if (user && password) {
+        //redirect user
+        navigate("/");
+      }
+    }
+    //reset state data
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
 
   //generic onchange mehtod that can be use for each input, using the 'name' attiribute
   const onInputChange = (e) => {
@@ -19,7 +45,13 @@ function Login() {
   };
   const onSubmit = (e) => {
     e.preventDefault();
+    const userData = { email, password };
+    dispatch(login(userData));
+    dispatch(reset());
   };
+  if (isLoading) {
+    <Spiner />;
+  }
   return (
     <>
       <section className="heading">
