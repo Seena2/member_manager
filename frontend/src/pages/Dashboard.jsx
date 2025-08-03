@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import MemberRegistration from "./MemberRegistration";
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -14,7 +15,11 @@ function Dashboard() {
   }, [user, navigate]);
   return (
     <div>
-      <h1>Dashboard</h1>
+      <section className="heading">
+        <h1>Welcome {user && user.name}</h1>
+        <p>Members Dashboard</p>
+      </section>
+      <MemberRegistration />
     </div>
   );
 }

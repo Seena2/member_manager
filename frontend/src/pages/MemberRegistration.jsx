@@ -1,18 +1,15 @@
 import { useState, useEffect } from "react";
-import { FaSignInAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import MemberHeader from "../components/member/MemberHeader";
 import MemberInfo from "../components/member/MemeberInfo";
 import Cooperative from "../components/member/Cooperative";
-import Regular from "../components/member/Regular";
+import MemberForm from "../components/member/MemberForm";
+import { Link } from "react-router-dom";
 
 function Member() {
   const [formData, setFormData] = useState({
-    membershipType: "regular",
-    organizationName: "",
+    membershipType: "",
   });
   //destructure the form fields
-  const { membershipType, organizationName } = formData;
+  const { membershipType } = formData;
 
   //generic onchange mehtod that can be use for each input, using the 'name' attiribute
   const onInputChange = (e) => {
@@ -26,14 +23,38 @@ function Member() {
   };
   return (
     <>
-      <MemberHeader />
-
       {/* <MemberInfo /> */}
-      <h1>New Members Registration Form</h1>
+
+      <ul className="justfy-left">
+        <h4>Instructions</h4>
+        <li>
+          Before starting the registration process, please Make sure to{" "}
+          <Link className="link" to="">
+            read this instructions
+          </Link>
+        </li>
+        <li>
+          Pay the members fee to the
+          <Link className="link" to="">
+            {" "}
+            EVA members bank account
+          </Link>
+        </li>
+        <li>
+          Choose the type of membership you want and start the registration
+        </li>
+        <li>
+          Required fields are labelled with astrix (
+          <span className="required">*</span>)
+        </li>
+      </ul>
+      <h4>New Members Registration Form</h4>
       <section className="form">
         <form onSubmit={onSubmit}>
           <div className="form-group">
-            <label htmlFor="">Type of Memebership:</label>
+            <label htmlFor="membershipType">
+              Type of Memebership<span className="required">*</span>
+            </label>
             <select
               id="membershipType"
               name="membershipType"
@@ -42,19 +63,20 @@ function Member() {
               onChange={onInputChange}
               required
             >
+              <option value="">Select membership type</option>
               <option value="regular">Regular</option>
               <option value="cooperative">Cooperative</option>
               <option value="lifeTime">Life Time</option>
               <option value="honorary">Honorary</option>
             </select>
           </div>
-          <p>
-            Required fields are labelled with "required"
-            <strong>
-              <abbr title="required">(*)</abbr>
-            </strong>
-          </p>
-          {membershipType === "cooperative" ? <Cooperative /> : <Regular />}
+
+          {membershipType &&
+            (membershipType === "cooperative" ? (
+              <Cooperative />
+            ) : (
+              <MemberForm />
+            ))}
 
           <div className="form-group">
             <button type="submit" className="btn btn-block">
@@ -63,6 +85,7 @@ function Member() {
           </div>
         </form>
       </section>
+      <footer>Seena &copy; 2020</footer>
     </>
   );
 }

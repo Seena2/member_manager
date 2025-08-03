@@ -1,31 +1,77 @@
-import React from "react";
+import { useState } from "react";
 
 function Employment() {
+  //temporary state to collect each experaince and push to 'fromData.experaince[]' in 'MemberForm'
+  const [allExperaiance, setAllExperaince] = useState([]);
+  const [formData, setFormData] = useState({
+    orgName: "",
+    organizationType: "",
+    role: "",
+    from: "",
+    to: "",
+    //work address
+    city: "",
+    region: "",
+    country: "",
+  });
+  //destructure the form fields data
+  const { orgName, organizationType, role, from, to, city, region, country } =
+    formData;
+
+  //generic onchange mehtod that can be use for each input, using the 'name' attiribute
+  const onInputChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const addExperiance = () => {
+    setAllExperaince((allExperaiance) => [...allExperaiance, formData]);
+    //clear form fields
+    setFormData({
+      orgName: "",
+      organizationType: "",
+      role: "",
+      from: "",
+      to: "",
+      //work address
+      city: "",
+      region: "",
+      country: "",
+    });
+  };
+
   return (
     <>
       <div className="form-group">
-        <label htmlFor="org"> Name of your Institute/Organization:</label>
+        <label htmlFor="orgName">
+          Name of the Organization/Institute<span className="required">*</span>
+        </label>
         <input
           type="text"
           className="form-control"
-          id="org"
-          name="org"
-          // value={firstName}
-          placeholder="Enter Your Name of the organization/inititute"
-          //   onChange={onInputChange}
+          id="orgName"
+          name="orgName"
+          value={orgName}
+          placeholder="Where you work/ed"
+          onChange={onInputChange}
           required
         />
       </div>
       <div className="form-group">
-        <label htmlFor="organizationType">Type of Organization:</label>
+        <label htmlFor="organizationType">
+          Type of Organization<span className="required">*</span>
+        </label>
         <select
           id="organizationType"
           name="organizationType"
           className="form-control"
-          //   value={organizationType}
-          //   onChange={onInputChange}
+          value={organizationType}
+          onChange={onInputChange}
           required
         >
+          <option value="">Select organization type</option>
           <option value="governmental">Governmental</option>
           <optgroup label="Non-Governmental">
             <option value="internationalOrganization">
@@ -40,30 +86,62 @@ function Employment() {
         </select>
       </div>
       <div className="form-group">
-        <label htmlFor="role"> Your role in the organization:</label>
+        <label htmlFor="role">
+          Your role in the organization<span className="required">*</span>
+        </label>
         <input
           type="text"
           className="form-control"
           id="role"
           name="role"
-          // value={role}
-          placeholder="Your Role in the org"
-          //   onChange={onInputChange}
+          value={role}
+          placeholder="Your role in the org"
+          onChange={onInputChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="from">
+          From<span className="required">*</span>
+        </label>
+        <input
+          type="date"
+          className="form-control"
+          id="from"
+          name="from"
+          value={from}
+          onChange={onInputChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="to">
+          To <span className="required">*</span>
+        </label>
+        <input
+          type="date"
+          className="form-control"
+          id="to"
+          name="to"
+          value={to}
+          onChange={onInputChange}
           required
         />
       </div>
       <p>Work address</p>
 
       <div className="form-group">
-        <label htmlFor="country:"> Country:</label>
+        <label htmlFor="country:">
+          City<span className="required">*</span>
+        </label>
         <input
           type="text"
           className="form-control"
-          id="country"
-          name="country"
-          // value={country}
-          placeholder="country"
-          //   onChange={onInputChange}
+          id="city"
+          name="city"
+          value={city}
+          placeholder="city"
+          onChange={onInputChange}
           required
         />
       </div>
@@ -74,74 +152,28 @@ function Employment() {
           className="form-control"
           id="region"
           name="region"
-          // value={region}
+          value={region}
           placeholder="Region"
-          //   onChange={onInputChange}
-          required
+          onChange={onInputChange}
         />
       </div>
       <div className="form-group">
-        <label htmlFor="district:"> District:</label>
+        <label htmlFor="country:">
+          Country<span className="required">*</span>
+        </label>
         <input
           type="text"
           className="form-control"
-          id="district"
-          name="district"
-          // value={district}
-          placeholder="District"
-          //   onChange={onInputChange}
+          id="country"
+          name="country"
+          value={country}
+          placeholder="country"
+          onChange={onInputChange}
           required
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="kebele:"> Kebele:</label>
-        <input
-          type="text"
-          className="form-control"
-          id="kebele"
-          name="kebele"
-          // value={kebele}
-          placeholder="Kebele"
-          //   onChange={onInputChange}
-          required
-        />
-      </div>
-      <button>
-        Add any other organization(s) you have worked for previosuly
-      </button>
-      <div className="form-group">
-        <label htmlFor="kebele:"> Total years of experaince(In years):</label>
-        <input
-          type="Number"
-          className="form-control"
-          id="experince"
-          name="experince"
-          // value={experince}
-          placeholder="experince in years"
-          //   onChange={onInputChange}
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="careerInterest">What is your career interest?</label>
-        <select
-          id="careerInterest"
-          name="careerInterest"
-          className="form-control"
-          //   value={careerInterest}
-          //   onChange={onInputChange}
-          required
-        >
-          <option value="academician">Academician</option>
-          <option value="researcher">Researcher</option>
-          <option value="fieldPractitioner">Field Practitioner</option>
-          <option value="privatePractitioner">Private Practitioner</option>
-          <option value="developmentOrganization">
-            To work for development organization
-          </option>
-          <option value="other">Other</option>
-        </select>
-      </div>
+
+      <button onClick={addExperiance}>Add Experaince</button>
     </>
   );
 }

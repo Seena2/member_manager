@@ -44,11 +44,30 @@ a {
 .header ul li a src {
   margin-right: 5px;
 }
-h1 {
+h1,
+h4 {
   margin-bottom: 1rem;
 }
 p {
   margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+.justfy-left {
+  text-align: left;
+  margin-left: 6rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.justfy-left li {
+  padding: 5px 0;
+}
+
+.link {
+  color: #114ccc;
+}
+.required {
+  color: #cc1111;
+  font-weight: bold;
 }
 .members {
   display: grid;
@@ -63,15 +82,29 @@ p {
   border: none;
   background: no;
 }
+.smallTitle {
+  color: #3f4044;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 /*form*/
 .form,
 .content {
   width: 70%;
   margin: 0 auto;
 }
+.formSectionHeader {
+  text-align: left;
+  margin-top: 0.3rem;
+  padding: 0.4rem;
+  color: #292c28;
+  background: #d3d2d2;
+}
 .form-group {
   margin-bottom: 10px;
 }
+
 .form-group input,
 .form-group textarea,
 .form-group select {
@@ -137,17 +170,23 @@ p {
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 /*Fee */
 .justfyParagraphs {
   text-align: justify;
+}
+.justfyParagraphs ul {
+  margin-left: 3rem;
+}
+.justfyParagraphs ul li {
+  margin-bottom: 0.5rem;
+}
+.justfyParagraphs .lightLabel {
+  color: #737373;
+  margin-right: 0.5rem;
+}
+.notice {
+  background-color: #e2f727;
+  padding: 1rem;
 }
 /*Agreement */
 .radio {
@@ -155,6 +194,26 @@ p {
   grid-template-columns: 10px auto;
   gap: 7px;
   margin-top: 10px;
+  margin-left: 2rem;
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+}
+.pagination button {
+  padding: 2px 10px;
+  border: none;
+  border: 1px solid #e0dfdf;
+  cursor: pointer;
+  border-radius: 5px;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 @media (max-width: 600px) {
   .form {
