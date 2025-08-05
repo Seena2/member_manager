@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const colors = require("colors"); //simply colors the code
 const cors = require("cors");
 const dotenv = require("dotenv").config();
@@ -20,6 +21,22 @@ app.use(express.urlencoded({ extended: false }));
 //Routes
 app.use("/api/members", memberRoutes);
 app.use("/api/users", userRoutes);
+
+//Serve the frontend(static files)
+if (process.env.NODE_ENV === "production") {
+  //set static folder
+  app.use(express.static(path.join(__dirname, "../frontend/build"))); //__dirname stands for current directory
+  //set route to frontend, *=>all routes
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "../", "frontend", "build", "index.html")
+    );
+  });
+} else {
+  app.get("/", (req, res) =>
+    res.send("Please set NODE_ENV in dotenv to production")
+  );
+}
 //Custom middleware
 //Note that custom middleware (including error-handling) must be placed after all other middleware and route handlers
 app.use(errorHandler);

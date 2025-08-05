@@ -72,6 +72,9 @@ const MemberForm = () => {
     otherQualification,
     temporary,
   } = formData;
+  //initialize useDispatch and navigate
+  const dispatch = useDispatch();
+
   //generic onchange mehtod that can be use for each input, using the 'name' attiribute
   const onInputChange = (e) => {
     setFormData((prevState) => ({

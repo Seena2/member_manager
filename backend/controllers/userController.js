@@ -71,6 +71,8 @@ const loginUser = asyncHandler(async (req, res) => {
 //@route    GET /api/users/me
 //@access   private
 const getMe = asyncHandler(async (req, res) => {
+  //hence we already got the user in 'authmiddleware and set it to req.user object
+  //we don't have to search user by its 'id', we can use that user find in auth middleware
   res.status(200).json(req.user);
 });
 
